@@ -1,0 +1,51 @@
+:root{
+    --ratio: 5%;
+
+}
+*{
+    color:#fafdf8
+
+}
+.elements-centrelized{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+
+.main{
+    background-image: url('../../public/background.jfif.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95vh;
+    flex-flow: column wrap;
+    
+}
+.form{
+    flex-flow: column wrap;
+    gap: 1vh;
+    width: 90%;
+
+    
+}
+
+
+.form input{
+    opacity: 0.2;
+    padding: 1vh 1vw;
+    text-align: left;
+    border-radius: 10px;
+    height: 5vh;
+    width: 90%;
+
+}
+
+.card{
+    background-color: #212a29;
+    padding: 2vh 2vh ;
+    height: 30vh;
+    width: 30vw;
+    border-radius: var(--ratio);
+    box-shadow: 8px 1px 5px #080a09;
+    opacity: 0.99;
+}
