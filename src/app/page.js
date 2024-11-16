@@ -1,25 +1,55 @@
-import './styles.css'
+'use client'
+import './login_style_sheet.css'
+import './w3s.css'
 
-export function CentralCard(){
+export function CentralCard({children}){
     return(
         <>
-        <div>
-            <LoginForm />            
+        <div className="card elements-centrelized">
+            {children}            
         </div>
         </>
+    )
+}
+
+export function SiginForm(){
+    return(
+        <>
+            <form className="form elements-centrelized">
+                <input type="text" placeholder='Email' />
+                <input type="password" placeholder='Insira uma Senha'/>
+                <input type="password" placeholder='Confirme a Senha'/>
+                <button>SigIn</button>
+            </form>
+        </>
+    )
+}
+
+export function ToggleButton(){
+    return (
+    <div className='elements-centrelized'>
+    <form onSubmit={(e)=>{
+        e.stopPropagation()
+        e.preventDefault()
+    }}>
+    <label className="switch">
+    <input type="checkbox" />
+    <span className="slider round"></span>
+    </label>
+    </form>
+    <span>Já tem uma conta</span>
+    </div>
     )
 }
 
 export function LoginForm(){
     return(
         <>
-        <div className="card elements-centrelized">
         <form className="form elements-centrelized">
             <input type="text" placeholder="Email" />
-            <input type="password" placeholder="PassWord" />
+            <input type="password" placeholder="Senha" />
             <button>Login</button>
         </form>
-        </div>
         </>
     )
 }
@@ -29,8 +59,11 @@ export default function Home(){
         <>
         <div className="main elements-centrelized">
             <h1>Login</h1>
-            <CentralCard />
-            <span>Forget a PassWord</span>
+            <CentralCard>
+                <SiginForm />
+            </CentralCard>
+            <ToggleButton/>
+            <span className='word'>Esqueceu-se da Senha</span>
         </div>
         </>
     )
